@@ -1,0 +1,175 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d7bca904-fdd0-4ccf-bb00-e8bee96216d3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>T OLAP Dim Dates 35</ID>
+  <Name>T OLAP Dim Dates 35</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>MDXFilterComponent</Name>
+      <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition" /&gt;&lt;/Filter&gt;</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="CubeDimensionBinding" dwd:design-time-name="7ffcd6c4-ef47-48a3-beb8-1e3593b6ec6c">
+    <DataSourceID>.</DataSourceID>
+    <CubeID>OLAP Balance Teplo DB</CubeID>
+    <CubeDimensionID>T OLAP Dim Dates</CubeDimensionID>
+    <Filter></Filter>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="28c41e0b-b56c-4244-a13c-ef5c70f3e87f">
+      <ID>PK Дата</ID>
+      <Name>PK Дата</Name>
+      <IsKey>true</IsKey>
+      <Type>Date</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="71484024-a6af-44de-b150-4feded4f0ee6">
+        <CubeID>OLAP Balance Teplo DB</CubeID>
+        <CubeDimensionID>T OLAP Dim Dates</CubeDimensionID>
+        <AttributeID>PK Дата</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Key</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="89828070-116a-4a8e-9547-9704dd0a866c">
+      <ID>Дутье Влажность гм3</ID>
+      <Name>Дутье Влажность гм3</Name>
+      <Type>Double</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="7d9629ab-e3c8-4824-98c1-1a966953049d">
+        <MeasureID>Дутье Влажность гм3</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="8519855e-7494-4e32-b879-7df011abc0e8">
+      <ID>Дутье Расход м3мин</ID>
+      <Name>Дутье Расход м3мин</Name>
+      <Type>Double</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="62fb7b73-6107-48a1-87bb-aa47b985374f">
+        <MeasureID>Дутье Расход м3мин</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="05434c32-6a9c-4e73-89f2-d9e67e3f248d">
+      <ID>Дутье Содержание O2</ID>
+      <Name>Дутье Содержание O2</Name>
+      <Type>Double</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="bb3435fb-a95d-4c71-9e2a-e64bfabbb670">
+        <MeasureID>Дутье Содержание O2</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="fcae9c83-e643-48a3-98fb-f9f716fa2e3c">
+      <ID>Дутье Температура °С</ID>
+      <Name>Дутье Температура °С</Name>
+      <Type>Double</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="9f7808ae-6735-4e63-bb2d-7d502d3ac4c5">
+        <MeasureID>Дутье Температура °С</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d3a42bdd-fdaf-4a7a-8790-23f2ee3776a7">
+      <ID>Дутье Удельный Расход Природного Газа м3т Чугуна</ID>
+      <Name>Дутье Удельный Расход Природного Газа м3т Чугуна</Name>
+      <Type>Double</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="a3cadeb3-304e-4b79-9f2d-ff9f0bc075dd">
+        <MeasureID>Дутье Удельный Расход Природного Газа м3т Чугуна</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="5e453426-0e6c-4a3b-ab45-009ad205a9b4">
+      <ID>Производительность Среднесуточная тсутки</ID>
+      <Name>Производительность Среднесуточная тсутки</Name>
+      <Type>Double</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="4dca7c4b-4609-4399-9f99-bc4f328a099c">
+        <MeasureID>Производительность Среднесуточная тсутки</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="276e49f6-b1b1-4a22-b1fb-50dd67f7f268">
+      <ID>T OLAP Dim Dates 35</ID>
+      <Name>T OLAP Dim Dates 35</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Neural_Network</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="98beec75-2dfd-4863-b6af-0568e1f45fd0">
+          <ID>PK Дата</ID>
+          <Name>PK Дата</Name>
+          <SourceColumnID>PK Дата</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="c853dc02-19a2-487d-98ce-53839f58aaf4">
+          <ID>Дутье Влажность гм3</ID>
+          <Name>Дутье Влажность гм3</Name>
+          <SourceColumnID>Дутье Влажность гм3</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="6cfcc76f-1f76-4893-8342-7cd743be9620">
+          <ID>Дутье Расход м3мин</ID>
+          <Name>Дутье Расход м3мин</Name>
+          <SourceColumnID>Дутье Расход м3мин</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="23ba0ff0-747d-4deb-9f00-1138519067d7">
+          <ID>Дутье Содержание O2</ID>
+          <Name>Дутье Содержание O2</Name>
+          <SourceColumnID>Дутье Содержание O2</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="3632e8fc-ba7c-4572-bc45-5d78757b1f8b">
+          <ID>Дутье Температура °С</ID>
+          <Name>Дутье Температура °С</Name>
+          <SourceColumnID>Дутье Температура °С</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="892019d9-c71f-4f0d-a0dc-4341e64743a4">
+          <ID>Дутье Удельный Расход Природного Газа м3т Чугуна</ID>
+          <Name>Дутье Удельный Расход Природного Газа м3т Чугуна</Name>
+          <SourceColumnID>Дутье Удельный Расход Природного Газа м3т Чугуна</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="825a8398-6a3f-4dba-9e22-91822214a182">
+          <ID>Производительность Среднесуточная тсутки</ID>
+          <Name>Производительность Среднесуточная тсутки</Name>
+          <SourceColumnID>Производительность Среднесуточная тсутки</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

@@ -1,0 +1,597 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="7a44783b-59ff-4325-b4f2-19a6e66767cb" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>OLAP Balance Teplo DB</ID>
+  <Name>OLAP Balance Teplo DB</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="ba220d62-b6e7-495c-b05e-ff3dd3db6856">
+      <ID>T OLAP Dim Pech</ID>
+      <Name>T OLAP Dim Pech</Name>
+      <DimensionID>T OLAP Dim Pech</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7386b2ba-31fb-4235-bcf9-86cbf8a7428b">
+          <AttributeID>PK Номер Печи</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="eef9d3e9-c5f0-4ee1-8b62-2d18e130e5ab">
+      <ID>T OLAP Dim Dates</ID>
+      <Name>T OLAP Dim Dates</Name>
+      <DimensionID>T OLAP Dim Dates</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="fd8f9acf-7e07-4ca7-8cf4-e9d620e01813">
+          <AttributeID>PK Дата</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="1093c3e7-66c2-429f-bb35-23262c5390bf">
+      <ID>T OLAP Fact Balance Teplo</ID>
+      <Name>T OLAP Fact Balance Teplo</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="dc23dc01-6b44-479a-b631-945c139ca6ef">
+          <ID>Приход Тепла Горение Кокса к Джкг Чугуна</ID>
+          <Name>Приход Тепла Горение Кокса к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="c6e62ed8-eebb-4700-99fa-825c73a4ba6f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="04386dc8-e67d-4394-9ad4-1b2f3eed698e">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Приход_x0020_тепла_x003A__x0020_горение_x0020_кокса_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d60605ed-1566-4e6a-9d4e-f95f83c60d9e">
+          <ID>Приход Тепла Физическое Тепло Дутья к Джкг Чугуна</ID>
+          <Name>Приход Тепла Физическое Тепло Дутья к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="075a2002-58b4-4835-a001-05c39b980ad9">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="caee1b1d-e3ea-4240-85c6-0cc59ac0b45e">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Приход_x0020_тепла_x003A__x0020_физическое_x0020_тепло_x0020_дутья_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fa37db01-c892-4e1a-bfa6-7864e2f02a26">
+          <ID>Приход Тепла Тепло От Горения Природного Газа к Джкг Чугуна</ID>
+          <Name>Приход Тепла Тепло От Горения Природного Газа к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="1b3f0a50-ffc0-4fcd-94aa-10f2e51c18c0">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="19d6452b-de4f-47fe-af05-f7704e387054">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Приход_x0020_тепла_x003A__x0020_тепло_x0020_от_x0020_горения_x0020_природного_x0020_газа_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="aab7609f-2705-42ae-b79a-32df35b7952b">
+          <ID>Приход Тепла Тепло Шлакообразования к Джкг Чугуна</ID>
+          <Name>Приход Тепла Тепло Шлакообразования к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="a14837fe-19c3-425a-b195-cb94fdb19619">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="297c93c9-2bda-4306-8c51-9f19613500cb">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Приход_x0020_тепла_x003A__x0020_тепло_x0020_шлакообразования_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="48ff741a-a165-4846-b47d-96783e79e2b0">
+          <ID>Расход Тепла Восстановление Оксидов Fe к Джкг Чугуна</ID>
+          <Name>Расход Тепла Восстановление Оксидов Fe к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="4f79082e-0b9b-4019-9221-99ebdf830ccf">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1e4251ca-1299-4d9c-ba23-29d8ad4398d5">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_восстановление_x0020_оксидов_x0020_Fe_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3a26782f-75a6-4d88-9a2e-b5b72a5d6869">
+          <ID>Расход Тепла Восстановление Оксидов Примесей к Джкг Чугуна</ID>
+          <Name>Расход Тепла Восстановление Оксидов Примесей к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="5a3b8ac8-29df-4e40-8436-869ab98fb315">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="aaad8675-b1d7-470b-bb7b-ef8e8caa19f4">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_восстановление_x0020_оксидов_x0020_примесей_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="48db7ccb-89e1-49c5-82ba-c70b6efa36ee">
+          <ID>Расход Тепла Десульфурация Чугуна к Джкг Чугуна</ID>
+          <Name>Расход Тепла Десульфурация Чугуна к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="78b9a6a8-6608-4b8d-8792-8ec91b3b4831">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="96cd4c0c-03f6-4106-8ee4-e91dbb417867">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_десульфурация_x0020_чугуна_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6b7aa243-579a-4b02-9cc0-e945c232801c">
+          <ID>Расход Тепла Восстановление Оксидов Fe Водородом к Джкг Чугуна</ID>
+          <Name>Расход Тепла Восстановление Оксидов Fe Водородом к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="998e68cb-60e1-4e2d-9260-70d5ce927b63">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3585fec4-4cc7-47c5-a46e-c29af5abdbc7">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_восстановление_x0020_оксидов_x0020_Fe_x0020_водородом_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f9ef523a-d60e-45a5-a0af-7e40d8693159">
+          <ID>Расход Тепла Нагрев Чугуна к Джкг Чугуна</ID>
+          <Name>Расход Тепла Нагрев Чугуна к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="773a974e-058c-4a2b-bd7d-98ee623ffc7c">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2237cf08-6bfc-464a-be13-99dcd12e19eb">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_нагрев_x0020_чугуна_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b316f112-74b6-4765-924b-b7e8c999ecbe">
+          <ID>Расход Тепла Нагрев Шлака к Джкг Чугуна</ID>
+          <Name>Расход Тепла Нагрев Шлака к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="c1382e6d-d05a-4da6-9a85-6055c80289cc">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="69914995-17d2-4062-9816-7684cedf84a0">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_нагрев_x0020_шлака_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6b392a1c-03b1-4fc7-b881-cbe22ae02c11">
+          <ID>Расход Тепла Разложение Влаги Дутья к Джкг Чугуна</ID>
+          <Name>Расход Тепла Разложение Влаги Дутья к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="492780e6-1a6c-474e-9f07-762708a1fd41">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9db2fa49-ea18-45f3-a8f7-d74c98aaa7b4">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_разложение_x0020_влаги_x0020_дутья_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a1013989-c7b4-4c41-b3f3-a168210b12ea">
+          <ID>Расход Тепла Разложение Известняка к Джкг Чугуна</ID>
+          <Name>Расход Тепла Разложение Известняка к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="1298dec4-3f68-4203-8773-c2c6c55eafd7">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4b444e22-2507-4e64-9a20-f63498f6550a">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_разложение_x0020_известняка_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="207da608-b904-498b-b2cd-38caaa8a403b">
+          <ID>Расход Тепла Разложение Влаги Шихты к Джкг Чугуна</ID>
+          <Name>Расход Тепла Разложение Влаги Шихты к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="16e33b40-d6ea-49e2-b826-8fc49478f818">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d32cde89-36ad-40fa-958e-0135a27e6ead">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_разложение_x0020_влаги_x0020_шихты_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="96c7c0d7-7465-4aba-9d35-97902f445b53">
+          <ID>Расход Тепла Тепло Колошникового Газа к Джкг Чугуна</ID>
+          <Name>Расход Тепла Тепло Колошникового Газа к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="64314865-7c95-4caf-9a60-de95e1f07bc1">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="31faa849-98df-4436-a435-3029cfb9a2e3">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_тепло_x0020_колошникового_x0020_газа_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5f70d0c6-82fe-4978-9bfd-852471d6eed9">
+          <ID>Расход Тепла Тепловые Потери к Джкг Чугуна</ID>
+          <Name>Расход Тепла Тепловые Потери к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="e2716d36-d180-4da3-a26d-d381376b2105">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b76cd548-1b35-43e5-a76b-5f054cd4d1a3">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Расход_x0020_тепла_x003A__x0020_тепловые_x0020_потери_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5b69126c-cd85-4b26-b791-67d51b79bcbe">
+          <ID>Общий Приходрасход Тепла в Печи к Джкг Чугуна</ID>
+          <Name>Общий Приходрасход Тепла в Печи к Джкг Чугуна</Name>
+          <Source dwd:design-time-name="dafd7ac2-773c-483d-8445-8be885e6a840">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3fa34534-5434-4082-b99f-c3fdda042746">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Общий_x0020_приход_x002F_расход_x0020_тепла_x0020_в_x0020_печи_x002C__x0020_кДж_x002F_кг_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4a248f39-7da7-4cc4-8c73-af33ebb8ba53">
+          <ID>Производительность Среднесуточная тсутки</ID>
+          <Name>Производительность Среднесуточная тсутки</Name>
+          <Source dwd:design-time-name="b116ef9d-1a74-4e4d-8fc4-ad8e53dafb6e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="25608bda-92e4-44e2-b549-def075fb34cb">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Производительность_x0020_среднесуточная_x002C__x0020_т_x002F_сутки</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="625a995a-7d75-4946-b155-400bcf7f3c38">
+          <ID>Химический Состав Чугуна C</ID>
+          <Name>Химический Состав Чугуна C</Name>
+          <Source dwd:design-time-name="1beb5c65-5452-4431-886d-f99a850ccfef">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c2ac0700-6cce-4d7a-a98c-5f0cda66ab49">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Химический_x0020_состав_x0020_чугуна_x003A__x0020_C_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8ad17d9f-c3e5-478f-b48e-2044833eccab">
+          <ID>Химический Состав Чугуна Si</ID>
+          <Name>Химический Состав Чугуна Si</Name>
+          <Source dwd:design-time-name="2dc4938c-027b-48ac-aff5-c8a3dd7948de">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="31296907-d39e-4fd6-94d2-d01067440402">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Химический_x0020_состав_x0020_чугуна_x003A__x0020_Si_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="11adb83f-d54f-4958-a2a9-215588522e74">
+          <ID>Химический Состав Чугуна Mn</ID>
+          <Name>Химический Состав Чугуна Mn</Name>
+          <Source dwd:design-time-name="1ff1ef81-3ea3-44e6-b5b5-e94e994aaae9">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="560726de-51f7-4f34-83c0-037440bbae11">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Химический_x0020_состав_x0020_чугуна_x003A__x0020_Mn_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f366cc04-6070-40a5-ae5b-75d5a8bf6c0f">
+          <ID>Химический Состав Чугуна S</ID>
+          <Name>Химический Состав Чугуна S</Name>
+          <Source dwd:design-time-name="f830ef76-7b9f-4112-a631-79998adab128">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f24e9b31-4928-4d36-8ff7-3f10456949b6">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Химический_x0020_состав_x0020_чугуна_x003A__x0020_S_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5b38da60-c5da-4489-90f6-df08e7df7381">
+          <ID>Химический Состав Чугуна P</ID>
+          <Name>Химический Состав Чугуна P</Name>
+          <Source dwd:design-time-name="76eeba99-429f-4194-bdf9-9747838fa17f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c4550576-3eec-47b9-8f91-fa1847c50374">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Химический_x0020_состав_x0020_чугуна_x003A__x0020_P_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="edd4d6f0-bdea-4a05-b01f-1e084a490c11">
+          <ID>Химический Состав Чугуна Ti</ID>
+          <Name>Химический Состав Чугуна Ti</Name>
+          <Source dwd:design-time-name="90924202-d215-4e01-ac66-8cad0083d473">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bbc35076-d096-4de4-9dfc-142a668f786e">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Химический_x0020_состав_x0020_чугуна_x003A__x0020_Ti_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fc37e7e3-0f53-438e-a3cd-6db782167eea">
+          <ID>Химический Состав Чугуна Cr</ID>
+          <Name>Химический Состав Чугуна Cr</Name>
+          <Source dwd:design-time-name="4ff0e761-8000-4127-8cd8-ffaa828fb82c">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c96e8e1a-1308-45fc-bff1-8d840836aaeb">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Химический_x0020_состав_x0020_чугуна_x003A__x0020_Cr_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="74a824fd-50db-4c62-9aa4-daa6f19092b8">
+          <ID>Химический Состав Чугуна V</ID>
+          <Name>Химический Состав Чугуна V</Name>
+          <Source dwd:design-time-name="4f039fd3-1181-4c8e-bb02-eefa7e6d490f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bc8a9b87-06b0-4f36-b69c-710b93c8f462">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Химический_x0020_состав_x0020_чугуна_x003A__x0020_V_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8a9fe09c-9185-481e-b03c-24db9c924b8a">
+          <ID>Удельный Расход Кокса Кгт Чугуна</ID>
+          <Name>Удельный Расход Кокса Кгт Чугуна</Name>
+          <Source dwd:design-time-name="9388777a-a506-4b6a-8e11-6545769ad55e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="66133223-0c7e-47f3-ab55-e13580a8b34b">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Удельный_x0020_расход_x0020_кокса_x002C__x0020_кг_x002F_т_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="852aa948-eef2-4fcd-9bc7-87ddfc6b94ea">
+          <ID>Зольность Кокса</ID>
+          <Name>Зольность Кокса</Name>
+          <Source dwd:design-time-name="fec6fb9e-dec4-49c8-902d-cdbc38c75a8c">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="31cf122e-644d-4da1-a3c1-16d1ead25c04">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Зольность_x0020_кокса_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fd8e614b-8ecd-4219-bd60-fed6427fc3b9">
+          <ID>Удельный Расход ЖРМ Кгт Чугуна</ID>
+          <Name>Удельный Расход ЖРМ Кгт Чугуна</Name>
+          <Source dwd:design-time-name="8f20aa70-d16e-4b7d-a801-3c2071953fb9">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6365c5d5-c686-48b6-97d9-c383ab3c5843">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Удельный_x0020_расход_x0020_ЖРМ_x002C__x0020_кг_x002F_т_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="27a03798-6595-4751-a4fc-0ebb79c43d3e">
+          <ID>Удельный Выход Шлака Кгт Чугуна</ID>
+          <Name>Удельный Выход Шлака Кгт Чугуна</Name>
+          <Source dwd:design-time-name="2a0bb0ed-b0cb-4c44-b79a-43aaf50edfde">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="51296bbe-71c0-4ea4-9a9a-8fe4c32ace32">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Удельный_x0020_выход_x0020_шлака_x002C__x0020_кг_x002F_т_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3d4187c6-c714-45cf-b1c2-382e03aa7657">
+          <ID>Основность Шлака Ca O  Si O2 Ед</ID>
+          <Name>Основность Шлака Ca O  Si O2 Ед</Name>
+          <Source dwd:design-time-name="02563459-f685-4dd3-9ea3-8020db4279f1">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1cc82415-c727-4f26-aea6-e8ac682a396f">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Основность_x0020_шлака_x0020_CaO_x0020__x002F__x0020_SiO2_x002C__x0020_ед.</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b2a81c39-7966-41b4-97f3-58c7878fd74b">
+          <ID>Основность Шлака  Ca O  Mg O  Si O2 Ед</ID>
+          <Name>Основность Шлака  Ca O  Mg O  Si O2 Ед</Name>
+          <Source dwd:design-time-name="32162df5-d7eb-42b6-8ee8-42ee00b89781">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0a2ac9d1-fa11-4f6f-86e3-8f0749e15c74">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Основность_x0020_шлака_x0020__x0028_CaO_x0020__x002B__x0020_MgO_x0029__x0020__x002F__x0020_SiO2_x002C__x0020_ед.</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5e336f2f-35db-41e8-90c0-359a38de87bd">
+          <ID>Основность Шлака  Ca O  Mg O   Si O2  Al2O3 Ед</ID>
+          <Name>Основность Шлака  Ca O  Mg O   Si O2  Al2O3 Ед</Name>
+          <Source dwd:design-time-name="d439e588-341b-4dcc-bb6c-fffb4ed7f295">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="dd1bb227-310f-46da-9625-83dc5a540910">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Основность_x0020_шлака_x0020__x0028_CaO_x0020__x002B__x0020_MgO_x0029__x0020__x002F__x0020__x0028_SiO2_x0020__x002B__x0020_Al2O3_x0029__x002C__x0020_ед.</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="355ef26e-81df-4e69-9e5a-04d7135d22d3">
+          <ID>Дутье Расход м3мин</ID>
+          <Name>Дутье Расход м3мин</Name>
+          <Source dwd:design-time-name="fe280467-5a1f-4fb6-9e75-351450e06f4e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="32b1f1ba-cd34-4cc1-8b35-70bda8b0c11d">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Дутье_x003A__x0020_расход_x002C__x0020_м3_x002F_мин</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2f70d039-fd66-4ec2-8a69-d36a616ddef5">
+          <ID>Дутье Температура °С</ID>
+          <Name>Дутье Температура °С</Name>
+          <Source dwd:design-time-name="87c8b351-3d2f-4030-bd9b-1bc5d4262eaf">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f10d7f7f-4936-41b8-9cc9-ee7846ebb453">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Дутье_x003A__x0020_температура_x002C__x0020__x00B0_С</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="dc3e0462-21b9-40bc-83e5-8dcc13160b8d">
+          <ID>Дутье Влажность гм3</ID>
+          <Name>Дутье Влажность гм3</Name>
+          <Source dwd:design-time-name="306f7362-f473-4f4e-b6c0-36617b5ffc35">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4e78f98d-62c2-4136-9dab-bd19a200fc31">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Дутье_x003A__x0020_влажность_x002C__x0020_г_x002F_м3</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5cf71b17-1150-4ca7-9053-13cef2dfb873">
+          <ID>Дутье Содержание O2</ID>
+          <Name>Дутье Содержание O2</Name>
+          <Source dwd:design-time-name="02966324-1e04-4a72-923f-ffb8388b2de5">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2ffa3b20-75c0-4d8b-a169-5e3b041b5829">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Дутье_x003A__x0020_содержание_x0020_O2_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0f6bb9be-88f1-4ead-bb38-32855f2cede8">
+          <ID>Дутье Удельный Расход Природного Газа м3т Чугуна</ID>
+          <Name>Дутье Удельный Расход Природного Газа м3т Чугуна</Name>
+          <Source dwd:design-time-name="045b863f-dbf9-48ac-b5b0-c3b1945e1bbd">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6cc98c83-ce40-446b-a3fd-2e6b46b37eb5">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Дутье_x003A__x0020_удельный_x0020_расход_x0020_природного_x0020_газа_x002C__x0020_м3_x002F_т_x0020_чугуна</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b15a8e4f-99f5-42e3-aa5e-17372984ebe6">
+          <ID>Состав Колошникового Газа CO</ID>
+          <Name>Состав Колошникового Газа CO</Name>
+          <Source dwd:design-time-name="1eeae304-7a10-4314-bcf2-5510f80e4f8b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7f257329-1b58-482a-bbff-c9d3d6b6ec39">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Состав_x0020_колошникового_x0020_газа_x003A__x0020_CO_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a6dbbfa1-792f-4abb-ae0e-ae730ceb5b3e">
+          <ID>Состав Колошникового Газа CO2</ID>
+          <Name>Состав Колошникового Газа CO2</Name>
+          <Source dwd:design-time-name="c1749ca1-fa3c-4856-84be-59d0d32606f4">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7af2d5bd-e610-48ae-b3c0-ac83b4d8b88e">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Состав_x0020_колошникового_x0020_газа_x003A__x0020_CO2_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7bdf2693-a881-4ae0-adf0-30dd9220d9c9">
+          <ID>Состав Колошникового Газа H2</ID>
+          <Name>Состав Колошникового Газа H2</Name>
+          <Source dwd:design-time-name="04fe832a-d209-4a2b-9bf5-1b43bb7868db">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c3cb0fe1-d974-4dc7-9316-ab40162e47a7">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Состав_x0020_колошникового_x0020_газа_x003A__x0020_H2_x002C__x0020__x0025_</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7386bcd1-4e40-4737-bdcf-f187624b8d6f">
+          <ID>Температура Колошникового Газа °С</ID>
+          <Name>Температура Колошникового Газа °С</Name>
+          <Source dwd:design-time-name="3f80fea8-6611-4675-bd96-22a28eb8b280">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f8f1353c-97ff-4fd9-91c8-57016a977daf">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Температура_x0020_колошникового_x0020_газа_x002C__x0020__x00B0_С</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b9e2b53f-adc6-4d28-988c-ad0ece8b41f3">
+          <ID>Степень Использования CO в Печи Ед</ID>
+          <Name>Степень Использования CO в Печи Ед</Name>
+          <Source dwd:design-time-name="d80ba83e-9341-4a21-804e-d8098d8918b1">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c6a65f2c-bae0-447e-9df0-515adaf4d556">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+              <ColumnID>Степень_x0020_использования_x0020_CO_x0020_в_x0020_печи_x002C__x0020_ед.</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8f9119c4-859f-448a-a5f0-8487e6720811">
+          <ID>Число T OLAP Fact Balance Teplo</ID>
+          <Name>Число T OLAP Fact Balance Teplo</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="156c6116-6654-4f1f-a18f-9f9650d33dbb">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="03995206-9827-4ed0-85b8-b7ba912328c6">
+              <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ce86ea79-0ed8-48bc-b01c-c4441e0e0007">
+          <CubeDimensionID>T OLAP Dim Pech</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="dcae0514-0610-49e2-8e69-dc669f800c2e">
+              <AttributeID>PK Номер Печи</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b617dd11-17dd-49c0-b273-c0b290b92162">
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3024b6ff-ee0b-46e9-8bb2-811822050edf">
+                    <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+                    <ColumnID>FK_Номер_x0020_печи</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b31d214c-8bd3-4eda-9cbb-ab3edba1364c">
+          <CubeDimensionID>T OLAP Dim Dates</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="9a87efc1-85e3-49fd-8ec3-d5d175ca0186">
+              <AttributeID>PK Дата</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e5fd1890-3b7e-4c17-aec1-11d7fd87dcf9">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e593c84a-392c-4bf2-9990-5c512d5daea7">
+                    <TableID>dbo_T_OLAP_Fact_Balance_Teplo</TableID>
+                    <ColumnID>FK_Дата</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="f9b7c5ef-48ba-422e-b35c-ab649cb3f9d5">
+    <DataSourceViewID>OLAP Balance Teplo DB</DataSourceViewID>
+  </Source>
+</Cube>

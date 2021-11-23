@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "lab2", "lab2\lab2.dwproj", "{88A177EF-54B0-42E9-933F-AEBDD1998BAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88A177EF-54B0-42E9-933F-AEBDD1998BAA}.Development|Default.ActiveCfg = Development
+		{88A177EF-54B0-42E9-933F-AEBDD1998BAA}.Development|Default.Build.0 = Development
+		{88A177EF-54B0-42E9-933F-AEBDD1998BAA}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46BA40CD-4A2C-4055-82C1-DF9F7B02AEE4}
+	EndGlobalSection
+EndGlobal
